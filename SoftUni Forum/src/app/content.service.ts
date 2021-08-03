@@ -13,7 +13,7 @@ export class ContentService {
   }
 
   loadPosts(take?: number){
-    const query = take ? `?take=${take}` : '';
+    const query = take ? `?limit=${take}` : '';
     return this.http.get<IPost[]>(`http://localhost:3000/api/posts${query}`)
   }
 }
